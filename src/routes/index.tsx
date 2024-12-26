@@ -1,12 +1,11 @@
 import { Title } from "@solidjs/meta";
-import Counter from "~/components/Counter";
+import { ThemeToggle } from "~/components/ThemeToggle";
 
 export default function Home() {
   return (
     <main>
-      <Title>Hello World</Title>
       <h1>Hello world!</h1>
-      <Counter />
+      <ThemeToggle />
       <p>
         Visit{" "}
         <a href="https://start.solidjs.com" target="_blank">
