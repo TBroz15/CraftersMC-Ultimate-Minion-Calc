@@ -2,8 +2,11 @@ import { MetaProvider, Title } from "@solidjs/meta";
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { Suspense } from "solid-js";
+
 import "./app.css";
 import "@fontsource/lexend";
+import "@fontsource/red-hat-display";
+
 import {
   ColorModeScript,
   ColorModeProvider,
@@ -34,7 +37,10 @@ export default function App() {
           />
           <ColorModeProvider storageManager={storageManager}>
             <Title>CraftersMC Ultimate Minion Calculator</Title>
-            <Suspense>{props.children}</Suspense>
+            <div class="bg-gradient-to-tr min-w-screen fixed inset-0 w-full h-full min-h-screen not-dark:from-cyan-100 not-dark:to-white dark:from-cyan-950 dark:to-blue-900"></div>
+            <div class="z-10 relative h-screen lg:h-[calc(100vh-2rem)] lg:rounded-3xl lg:m-4 p-4">
+              <Suspense>{props.children}</Suspense>
+            </div>
           </ColorModeProvider>
         </MetaProvider>
       )}

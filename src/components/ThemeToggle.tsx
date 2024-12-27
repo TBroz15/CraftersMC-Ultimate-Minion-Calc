@@ -28,6 +28,9 @@ export function ThemeToggle() {
         <DropdownMenuItem onSelect={() => setColorMode("light")}>
           <BsSun class="mr-2 size-4" />
           <span>Light</span>
+          <span>
+            (will hurt your eyes <i>really!</i>)
+          </span>
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => setColorMode("dark")}>
           <BsMoon class="mr-2 size-4" />

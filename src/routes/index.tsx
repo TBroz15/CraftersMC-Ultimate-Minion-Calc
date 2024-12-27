@@ -1,18 +1,18 @@
-import { Title } from "@solidjs/meta";
+import Calculator from "~/components/Calculator";
 import { ThemeToggle } from "~/components/ThemeToggle";
+import { Flex } from "~/components/ui/flex";
 
 export default function Home() {
   return (
-    <main>
-      <h1>Hello world!</h1>
-      <ThemeToggle />
-      <p>
-        Visit{" "}
-        <a href="https://start.solidjs.com" target="_blank">
-          start.solidjs.com
-        </a>{" "}
-        to learn how to build SolidStart apps.
-      </p>
-    </main>
+    <Flex flexDirection="col" class="gap-8">
+      <Flex class="gap-8" justifyContent="start">
+        <h1 class="font-bold text-2xl font-RedHatDisplay">
+          CraftersMC Ultimate Minion Calculator
+        </h1>
+        <ThemeToggle />
+      </Flex>
+
+      <Calculator />
+    </Flex>
   );
 }
