@@ -1,5 +1,5 @@
 import { Minion, MinionTier } from "~/interfaces/Minion";
-import { RawMutton, Wool } from "../../items/farming/mobs/Sheep";
+import { RawMutton, Wool } from "../../../items/farming/mobs/Sheep";
 
 const SheepTiers: MinionTier[] = [
   { tier: 1, dailyReturns: [1800, 1800] },

@@ -1,5 +1,5 @@
 import { Minion, MinionTier } from "~/interfaces/Minion";
-import { RawDuck, DuckEgg } from "../../items/farming/mobs/Duck";
+import { RawDuck, DuckEgg } from "../../../items/farming/mobs/Duck";
 import { Feather } from "~/data/items/farming/mobs/Chicken";
 
 const DuckTiers: MinionTier[] = [

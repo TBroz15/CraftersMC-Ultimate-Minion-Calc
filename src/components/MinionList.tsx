@@ -9,48 +9,57 @@ import {
   ComboboxSection,
   ComboboxTrigger,
 } from "~/components/ui/combobox";
+import {
+  CombatMinions,
+  FarmingCropsMinions,
+  FarmingMobsMinions,
+  ForagingMinions,
+  MiningMinions,
+} from "~/data/MinionList";
+import { Minion } from "~/interfaces/Minion";
+import { Separator } from "./ui/separator";
 
-interface Food {
+interface MinionOption {
   value: string;
   label: string;
-  disabled: boolean;
 }
-interface Category {
+interface Options {
   label: string;
-  options: Food[];
+  options: MinionOption[];
 }
-const ALL_OPTIONS: Category[] = [
+
+const getMinionOptions = (minions: Minion[]): MinionOption[] =>
+  minions.map((minion) => ({
+    value: minion.name,
+    label: minion.name,
+  }));
+
+const ALL_OPTIONS: Options[] = [
   {
-    label: "Foraging",
-    options: [
-      { value: "apple", label: "Apple", disabled: false },
-      { value: "banana", label: "Banana", disabled: false },
-      { value: "blueberry", label: "Blueberry", disabled: false },
-      { value: "grapes", label: "Grapes", disabled: true },
-      { value: "pineapple", label: "Pineapple", disabled: false },
-    ],
+    label: "Combat",
+    options: getMinionOptions(CombatMinions),
   },
   {
-    label: "Meat",
-    options: [
-      { value: "beef", label: "Beef", disabled: false },
-      { value: "chicken", label: "Chicken", disabled: false },
-      { value: "lamb", label: "Lamb", disabled: false },
-      { value: "pork", label: "Pork", disabled: false },
-    ],
+    label: "Farming (Crops)",
+    options: getMinionOptions(FarmingCropsMinions),
   },
+  {
+    label: "Farming (Mobs)",
+    options: getMinionOptions(FarmingMobsMinions),
+  },
+  { label: "Foraging", options: getMinionOptions(ForagingMinions) },
+  { label: "Mining", options: getMinionOptions(MiningMinions) },
 ];
 
 export function MinionList() {
   return (
-    <Combobox<Food, Category>
+    <Combobox<MinionOption, Options>
       options={ALL_OPTIONS}
       optionValue="value"
       optionTextValue="label"
       optionLabel="label"
-      optionDisabled="disabled"
       optionGroupChildren="options"
-      placeholder="Search a food…"
+      placeholder="Select a minion…"
       itemComponent={(props) => (
         <ComboboxItem item={props.item}>
           <ComboboxItemLabel>{props.item.rawValue.label}</ComboboxItemLabel>
@@ -58,10 +67,16 @@ export function MinionList() {
         </ComboboxItem>
       )}
       sectionComponent={(props) => (
-        <ComboboxSection>{props.section.rawValue.label}</ComboboxSection>
+        <ComboboxSection>
+          {props.section.rawValue.label}
+          <Separator />
+        </ComboboxSection>
       )}
     >
-      <ComboboxControl aria-label="Food">
+      <ComboboxControl
+        aria-label="Minion"
+        class="dark:bg-neutral-900 not-dark:bg-neutral-200"
+      >
         <ComboboxInput />
         <ComboboxTrigger />
       </ComboboxControl>

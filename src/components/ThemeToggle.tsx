@@ -1,6 +1,7 @@
 import { useColorMode } from "@kobalte/core";
 
 import { BsLaptop, BsSun, BsMoon } from "solid-icons/bs";
+import { Show } from "solid-js";
 import { Button } from "~/components/ui/button";
 import {
   DropdownMenu,
@@ -10,7 +11,7 @@ import {
 } from "~/components/ui/dropdown-menu";
 
 export function ThemeToggle() {
-  const { setColorMode } = useColorMode();
+  const { setColorMode, colorMode } = useColorMode();
 
   return (
     <DropdownMenu>
@@ -29,12 +30,19 @@ export function ThemeToggle() {
           <BsSun class="mr-2 size-4" />
           <span>Light</span>
           <span>
-            (will hurt your eyes <i>really!</i>)
+            <Show when={colorMode() === "dark"}>
+              (will hurt your eyes <i>really!</i>)
+            </Show>
           </span>
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => setColorMode("dark")}>
           <BsMoon class="mr-2 size-4" />
           <span>Dark</span>
+          <span>
+            <Show when={colorMode() === "light"}>
+              (light mode hurts your eyes <i>right?</i>)
+            </Show>
+          </span>
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => setColorMode("system")}>
           <BsLaptop class="mr-2 size-4" />

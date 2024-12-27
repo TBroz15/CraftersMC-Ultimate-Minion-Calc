@@ -1,5 +1,5 @@
 import { Minion, MinionTier } from "~/interfaces/Minion";
-import { Potato } from "../../items/farming/crops/Potato";
+import { Potato } from "../../../items/farming/crops/Potato";
 
 const PotatoTiers: MinionTier[] = [
   { tier: 1, dailyReturns: [6480] },

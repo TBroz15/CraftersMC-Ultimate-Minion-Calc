@@ -1,5 +1,5 @@
 import { Minion, MinionTier } from "~/interfaces/Minion";
-import { Beetroot, BeetrootSeeds } from "../../items/farming/crops/Beetroot";
+import { Beetroot, BeetrootSeeds } from "../../../items/farming/crops/Beetroot";
 
 const BeetrootTiers: MinionTier[] = [
   { tier: 1, dailyReturns: [5890, 8835] },
@@ -16,7 +16,7 @@ const BeetrootTiers: MinionTier[] = [
 ];
 
 export const BeetrootMinion: Minion = {
-  name: "Sugar Cane Minion",
+  name: "Beetroot Minion",
   returns: [Beetroot, BeetrootSeeds],
   tiers: BeetrootTiers,
 };

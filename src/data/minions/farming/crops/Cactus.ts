@@ -1,7 +1,7 @@
 import { Minion, MinionTier } from "~/interfaces/Minion";
-import { CocoaBeans } from "../../items/farming/crops/CocoaBeans";
+import { GreenDye } from "../../../items/farming/crops/GreenDye";
 
-const CocoaBeansTiers: MinionTier[] = [
+const CactusTiers: MinionTier[] = [
   { tier: 1, dailyReturns: [4800] },
   { tier: 2, dailyReturns: [4800] },
   { tier: 3, dailyReturns: [5183] },
@@ -15,8 +15,8 @@ const CocoaBeansTiers: MinionTier[] = [
   { tier: 11, dailyReturns: [8640] },
 ];
 
-export const CocoaBeansMinion: Minion = {
-  name: "Cocoa Beans Minion",
-  returns: [CocoaBeans],
-  tiers: CocoaBeansTiers,
+export const CactusMinion: Minion = {
+  name: "Cactus Minion",
+  returns: [GreenDye],
+  tiers: CactusTiers,
 };

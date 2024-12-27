@@ -1,5 +1,5 @@
 import { Minion, MinionTier } from "~/interfaces/Minion";
-import { WheatSeeds, Wheat } from "../../items/farming/crops/Wheat";
+import { WheatSeeds, Wheat } from "../../../items/farming/crops/Wheat";
 
 const WheatTiers: MinionTier[] = [
   { tier: 1, dailyReturns: [2880, 4320] },

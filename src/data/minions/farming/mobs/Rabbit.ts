@@ -3,7 +3,7 @@ import {
   RawRabbit,
   RabbitFoot,
   RabbitHide,
-} from "../../items/farming/mobs/Rabbit";
+} from "../../../items/farming/mobs/Rabbit";
 
 const RabbitTiers: MinionTier[] = [
   { tier: 1, dailyReturns: [1661, 581, 581] },

@@ -1,5 +1,5 @@
 import { Minion, MinionTier } from "~/interfaces/Minion";
-import { RawPorkchop } from "../../items/farming/mobs/Pig";
+import { RawPorkchop } from "../../../items/farming/mobs/Pig";
 
 const PigTiers: MinionTier[] = [
   { tier: 1, dailyReturns: [1661] },
