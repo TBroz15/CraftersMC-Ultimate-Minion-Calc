@@ -12,6 +12,7 @@
     "@corvu/drawer": "^0.2.2",
     "@corvu/otp-field": "^0.1.4",
     "@corvu/resizable": "^0.2.3",
+    "@fontsource/jetbrains-mono": "^5.1.1",
     "@fontsource/lexend": "^5.1.1",
     "@fontsource/red-hat-display": "^5.1.0",
     "@kobalte/core": "^0.13.7",

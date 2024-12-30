@@ -1,8 +1,10 @@
 import { Component, JSX } from "solid-js";
 import { Flex } from "./ui/flex";
+import { twMerge } from "tailwind-merge";
 
 interface BorderProps {
   children: JSX.Element;
+  class?: string;
 }
 
 const Border: Component<BorderProps> = (props) => {
@@ -11,7 +13,10 @@ const Border: Component<BorderProps> = (props) => {
       justifyContent="start"
       alignItems="start"
       flexDirection="col"
-      class="dark:bg-[black]/10 gap-4 dark:border-[#74c1f2] border-[1px] backdrop-filter backdrop-blur-sm overflow-x-auto p-4 rounded-md"
+      class={twMerge(
+        "dark:bg-[black]/5 gap-4 dark:border-[#74c1f2] border-[1px] backdrop-filter backdrop-blur-sm p-4 rounded-md",
+        props.class
+      )}
     >
       {props.children}
     </Flex>

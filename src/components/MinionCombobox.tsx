@@ -51,7 +51,7 @@ const ALL_OPTIONS: Options[] = [
   { label: "Mining", options: getMinionOptions(MiningMinions) },
 ];
 
-export function MinionList() {
+export function MinionCombobox() {
   return (
     <Combobox<MinionOption, Options>
       options={ALL_OPTIONS}
@@ -75,9 +75,9 @@ export function MinionList() {
     >
       <ComboboxControl
         aria-label="Minion"
-        class="dark:bg-neutral-900 not-dark:bg-neutral-200"
+        class="border-transparent hover:border-neutral-400 p-0"
       >
-        <ComboboxInput />
+        <ComboboxInput class="text-2xl" />
         <ComboboxTrigger />
       </ComboboxControl>
       <ComboboxContent />
