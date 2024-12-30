@@ -38,7 +38,7 @@ export default function App() {
           <ColorModeProvider storageManager={storageManager}>
             <Title>CraftersMC Ultimate Minion Calculator</Title>
             <div class="bg-gradient-to-tr min-w-screen fixed inset-0 w-full h-full min-h-screen not-dark:from-cyan-100 not-dark:to-white dark:from-cyan-950 dark:to-blue-900"></div>
-            <div class="z-10 relative h-full xl:h-screen  xl:rounded-3xl xl:m-4 p-4">
+            <div class="z-10 relative h-full xl:h-screen xl:rounded-3xl xl:m-4 p-4">
               <Suspense>{props.children}</Suspense>
             </div>
           </ColorModeProvider>

@@ -22,6 +22,7 @@ import { Checkbox } from "./ui/checkbox";
 import { Label } from "./ui/label";
 import { JSX, Show } from "solid-js";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import { FuelCombobox } from "./FuelCombobox";
 
 function ResponsiveResizable(props: {
   Minions: JSX.Element;
@@ -89,14 +90,10 @@ function MinionItem() {
             <NumberFieldDecrementTrigger />
           </NumberFieldGroup>
         </NumberField>
-        <NumberField defaultValue={1} minValue={1} maxValue={11}>
-          Fuel <i>(assume infinite duration)</i>
-          <NumberFieldGroup class="dark:bg-neutral-900 not-dark:bg-neutral-200">
-            <NumberFieldInput />
-            <NumberFieldIncrementTrigger />
-            <NumberFieldDecrementTrigger />
-          </NumberFieldGroup>
-        </NumberField>
+        <Flex flexDirection="col" alignItems="start">
+          Fuel (assume infinite duration)
+          <FuelCombobox></FuelCombobox>
+        </Flex>
       </Flex>
       <Flex justifyContent="start" class="gap-2">
         <Checkbox id="REPLACE" />
@@ -149,6 +146,8 @@ export default function Calculator() {
         Result={
           <Border class="h-fit">
             <h2 class="text-xl font-semibold">Result</h2>
+            coming soon
+            <img src="/Glungus.webp"></img>
           </Border>
         }
       ></ResponsiveResizable>
